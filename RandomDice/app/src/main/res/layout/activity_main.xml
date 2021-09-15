@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A3A3A3"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/diceResultText"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/diceResultText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rollAllDiceBut"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#0050C8"
+        android:onClick="rollAllDice"
+        android:text="Roll All"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceResultText" />
+
+    <TextView
+        android:id="@+id/numbOfDiceText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="@string/numbOfDiceText"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/plusDice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/minusDice"
+        app:layout_constraintTop_toBottomOf="@+id/diceResultText" />
+
+    <Button
+        android:id="@+id/minusDice"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#0050C8"
+        android:onClick="removeDice"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceResultText" />
+
+    <Button
+        android:id="@+id/plusDice"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#0050C8"
+        android:onClick="addDice"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/rollAllDiceBut"
+        app:layout_constraintTop_toBottomOf="@+id/diceResultText" />
+
+    <Button
+        android:id="@+id/rollDiceOnceBut"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#0050C8"
+        android:onClick="rollDiceOneByOne"
+        android:text="Roll One"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollAllDiceBut" />
+
+    <ImageView
+        android:id="@+id/diceImage2"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceOnceBut"
+        app:srcCompat="@drawable/locked" />
+
+    <ImageView
+        android:id="@+id/diceImage4"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceImage2"
+        app:srcCompat="@drawable/locked" />
+
+    <ImageView
+        android:id="@+id/diceImage3"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceImage1"
+        app:srcCompat="@drawable/locked" />
+
+    <ImageView
+        android:id="@+id/diceImage1"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numbOfDiceText"
+        app:srcCompat="@drawable/dice_unknown" />
+
+    <Button
+        android:id="@+id/goToResultsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#0050C8"
+        android:text="View Results"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
