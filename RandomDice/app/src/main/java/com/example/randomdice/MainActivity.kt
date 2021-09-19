@@ -149,4 +149,6 @@ class MainActivity : AppCompatActivity() {
 
         setDiceImage(initialNumTextView.text.toString().toInt())
     }
+
+
 }
