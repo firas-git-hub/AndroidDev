@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private var oneByOneRollindex = 1
+    private var oneByOneRollIndex = 1
 
     fun saveDiceResults(result: String){
         results.add(DiceResult(result + "\r\n"))
@@ -86,32 +86,32 @@ class MainActivity : AppCompatActivity() {
         var randomNum = (1..6).random()
         var textRes = ""
 
-        if(oneByOneRollindex == 1){
+        if(oneByOneRollIndex == 1){
             setDiceImage(nbOfDice)
             resultText.setText("")
-            textRes = " |#| Roll" + oneByOneRollindex.toString() + ": " + randomNum.toString() + " |#| "
+            textRes = " |#| Roll" + oneByOneRollIndex.toString() + ": " + randomNum.toString() + " |#| "
             resultText.setText(textRes)
-            setDiceImage(oneByOneRollindex, randomNum)
-            if(oneByOneRollindex != nbOfDice)
-                oneByOneRollindex++
+            setDiceImage(oneByOneRollIndex, randomNum)
+            if(oneByOneRollIndex != nbOfDice)
+                oneByOneRollIndex++
 
             else
                 saveDiceResults(textRes)
         }
 
-        else if(oneByOneRollindex < nbOfDice){
-            textRes = resultText.text.toString() + "Roll" + oneByOneRollindex.toString() + ": " + randomNum.toString() + " |#| "
+        else if(oneByOneRollIndex < nbOfDice){
+            textRes = resultText.text.toString() + "Roll" + oneByOneRollIndex.toString() + ": " + randomNum.toString() + " |#| "
             resultText.setText(textRes)
-            setDiceImage(oneByOneRollindex, randomNum)
-            if(oneByOneRollindex != nbOfDice)
-                oneByOneRollindex++
+            setDiceImage(oneByOneRollIndex, randomNum)
+            if(oneByOneRollIndex != nbOfDice)
+                oneByOneRollIndex++
         }
 
-        else if(oneByOneRollindex == nbOfDice){
-            textRes = resultText.text.toString() + "Roll" + oneByOneRollindex.toString() + ": " + randomNum.toString() + " |#| "
+        else if(oneByOneRollIndex == nbOfDice){
+            textRes = resultText.text.toString() + "Roll" + oneByOneRollIndex.toString() + ": " + randomNum.toString() + " |#| "
             resultText.setText(textRes)
-            setDiceImage(oneByOneRollindex, randomNum)
-            oneByOneRollindex = 1
+            setDiceImage(oneByOneRollIndex, randomNum)
+            oneByOneRollIndex = 1
             saveDiceResults(resultText.text.toString())
         }
     }
