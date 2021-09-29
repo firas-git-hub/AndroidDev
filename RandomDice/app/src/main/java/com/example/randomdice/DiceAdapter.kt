@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.chauthai.swipereveallayout.SwipeRevealLayout
 import com.chauthai.swipereveallayout.ViewBinderHelper
 
-class DiceAdapter(private val results: ArrayList<DiceResult>) : RecyclerView.Adapter<DiceAdapter.ViewHolder>() {
+class DiceAdapter() : RecyclerView.Adapter<DiceAdapter.ViewHolder>() {
 
 
     class ViewHolder(resultView: View) : RecyclerView.ViewHolder(resultView){
@@ -28,17 +28,16 @@ class DiceAdapter(private val results: ArrayList<DiceResult>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val result: DiceResult = results[position]
-        holder.binderHelper.bind(holder.swipeRevealLayout, result.roll)
+        holder.binderHelper.bind(holder.swipeRevealLayout, Results.results[position].roll)
         holder.diceImageView.setImageResource(R.drawable.dice_unknown)
-        holder.diceResultText.text = result.roll
+        holder.diceResultText.text = Results.results[position].roll
         holder.deleteOneBtn.setOnClickListener {
             deleteResult(holder.adapterPosition)
         }
     }
 
     override fun getItemCount(): Int {
-        return results.size
+        return Results.results.size
     }
 
     interface onClickListener {
@@ -46,7 +45,10 @@ class DiceAdapter(private val results: ArrayList<DiceResult>) : RecyclerView.Ada
     }
 
     fun deleteResult(position: Int){
-        results.removeAt(position)
+        Results.results.removeAt(position)
         this.notifyDataSetChanged()
     }
+}
+object Results{
+    var results: ArrayList<DiceResult> = ArrayList()
 }

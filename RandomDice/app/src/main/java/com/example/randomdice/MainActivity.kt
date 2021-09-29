@@ -12,7 +12,6 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     private var images = arrayOf<ImageView>()
-    private var results = arrayListOf<DiceResult>()
     private lateinit var resultsButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         resultsButton = findViewById(R.id.goToResultsBtn)
         resultsButton.setOnClickListener{
             val intent = Intent(this, DiceResultsDisplayActivity::class.java)
-            intent.putExtra("diceResArr", results)
             startActivity(intent)
         }
     }
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private var oneByOneRollIndex = 1
 
     fun saveDiceResults(result: String){
-        results.add(DiceResult(result + "\r\n"))
+         Results.results.add(DiceResult(result + "\r\n"))
     }
 
     fun setDiceImage(index: Int, diceNum: Int = -1){
