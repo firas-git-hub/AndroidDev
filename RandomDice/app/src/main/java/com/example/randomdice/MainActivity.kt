@@ -1,6 +1,7 @@
 package com.example.randomdice
 
 import Model.DiceResult
+import Model.RandomDiceService
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,7 +34,9 @@ class MainActivity : AppCompatActivity() {
     private var oneByOneRollIndex = 1
 
     fun saveDiceResults(result: String){
-         Results.results.add(DiceResult(result + "\r\n"))
+        /*Results.results.add(DiceResult(result + "\r\n"))*/
+        //Calling the POST HTTP request
+        RandomDiceService.postResults(result)
     }
 
     fun setDiceImage(index: Int, diceNum: Int = -1){
