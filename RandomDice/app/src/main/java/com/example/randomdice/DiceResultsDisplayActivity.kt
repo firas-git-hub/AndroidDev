@@ -23,6 +23,7 @@ class DiceResultsDisplayActivity : AppCompatActivity(), DiceAdapter.onClickListe
         diceRecyclerView = findViewById<RecyclerView>(R.id.diceResultsRecyclerView) as RecyclerView
         diceRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         diceRecyclerView.adapter = DiceAdapter()
+        //Calling the GET HTTP request
         RandomDiceService.getResults(diceRecyclerView)
 
         findViewById<Button>(R.id.deleteAllBtn).setOnClickListener {

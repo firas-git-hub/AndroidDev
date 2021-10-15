@@ -3,6 +3,7 @@ package Model
 import android.location.OnNmeaMessageListener
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
+import com.example.randomdice.DiceAdapter
 import com.example.randomdice.DiceResultsDisplayActivity
 import com.example.randomdice.Results
 import com.google.gson.GsonBuilder
@@ -86,7 +87,7 @@ class RandomDiceService {
                 ) {
                     val responseBody = response.body()!!
                     for(myData in responseBody){
-                        Results.results.add(DiceResult(myData.roll))
+                        Results.results.add(DiceResult(myData.roll, myData.id))
                     }
                     updateViewItem(diceRecyclerView)
                 }
@@ -95,6 +96,33 @@ class RandomDiceService {
                     Log.e("RETROFIT_ERROR", call.toString())
                 }
             })
+        }
+
+        fun deleteResult(adapter: DiceAdapter, resultId: Int, resultPosition: Int){
+            val retrofit = Retrofit.Builder()
+                .baseUrl("https://616004fdfaa03600179fb844.mockapi.io/api/RandomDice/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val service = retrofit.create(APIService::class.java)
+
+            CoroutineScope(Dispatchers.IO).launch {
+                // Do the POST request and get response
+                val response = service.deleteResult(resultId.toString())
+
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+
+                        Log.d("Deleted", "Deleted from API")
+                        Results.results.removeAt(resultPosition)
+                        adapter.notifyDataSetChanged()
+
+                    } else {
+
+                        Log.e("RETROFIT_ERROR", response.code().toString())
+
+                    }
+                }
+            }
         }
 
         fun updateViewItem(diceRecyclerView: RecyclerView){

@@ -1,6 +1,7 @@
 package com.example.randomdice
 
 import Model.DiceResult
+import Model.RandomDiceService
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ class DiceAdapter() : RecyclerView.Adapter<DiceAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent?.context).inflate(R.layout.dice_results_layout, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.dice_results_layout, parent, false)
         return ViewHolder(v)
     }
 
@@ -44,9 +45,8 @@ class DiceAdapter() : RecyclerView.Adapter<DiceAdapter.ViewHolder>() {
         fun onClick(position: Int)
     }
 
-    fun deleteResult(position: Int){
-        Results.results.removeAt(position)
-        this.notifyDataSetChanged()
+    private fun deleteResult(position: Int){
+        RandomDiceService.deleteResult(this, Results.results[position].id, position)
     }
 }
 object Results{
