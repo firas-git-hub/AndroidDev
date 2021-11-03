@@ -15,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RandomDice">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD-y7qSnVJwK308Yg3Cc82mCJLxS1Msavs" />
         <activity
             android:name=".GalCamActivity"
             android:exported="true" />

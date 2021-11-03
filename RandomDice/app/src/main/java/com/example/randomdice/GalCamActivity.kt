@@ -40,7 +40,7 @@ class GalCamActivity : AppCompatActivity() {
                 CameraServices.loadCamera(this, cameraPermissionRQ)
                 lastPressedButton = "Camera"
             } else {
-                CameraServices.requestPermision(this, cameraPermissionRQ)
+                CameraServices.requestPermission(this, cameraPermissionRQ)
             }
         }
 
@@ -49,7 +49,7 @@ class GalCamActivity : AppCompatActivity() {
                 GalleryServices.loadGallery(this, galleryPermissionRQ)
                 lastPressedButton = "Gallery"
             } else {
-                GalleryServices.requestPermision(this, galleryPermissionRQ)
+                GalleryServices.requestPermission(this, galleryPermissionRQ)
             }
         }
 

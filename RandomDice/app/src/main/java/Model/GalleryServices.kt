@@ -12,7 +12,7 @@ object GalleryServices {
         return ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun requestPermision(activity: AppCompatActivity, requestCode: Int){
+    fun requestPermission(activity: AppCompatActivity, requestCode: Int){
         ActivityCompat.requestPermissions(
             activity,
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),

@@ -14,7 +14,7 @@ object CameraServices {
         return ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun requestPermision(activity: AppCompatActivity, requestCode: Int){
+    fun requestPermission(activity: AppCompatActivity, requestCode: Int){
         ActivityCompat.requestPermissions(
             activity,
             arrayOf(Manifest.permission.CAMERA),

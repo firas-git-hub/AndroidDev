@@ -4,4 +4,5 @@
     <string name="diceResultText">-</string>
     <string name="ChangePPBut">Change PP</string>
     <string name="locTextView">-</string>
+    <string name="coordsTextView">Click me for coords</string>
 </resources>
