@@ -2,4 +2,6 @@
     <string name="app_name">RandomDice</string>
     <string name="numbOfDiceText">1</string>
     <string name="diceResultText">-</string>
+    <string name="ChangePPBut">Change PP</string>
+    <string name="locTextView">-</string>
 </resources>

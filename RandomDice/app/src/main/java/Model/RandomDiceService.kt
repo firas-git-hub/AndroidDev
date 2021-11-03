@@ -1,26 +1,21 @@
 package Model
 
-import android.location.OnNmeaMessageListener
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
+import com.example.randomdice.APIService
 import com.example.randomdice.DiceAdapter
-import com.example.randomdice.DiceResultsDisplayActivity
 import com.example.randomdice.Results
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.coroutines.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONArray
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
 
 class RandomDiceService {
 

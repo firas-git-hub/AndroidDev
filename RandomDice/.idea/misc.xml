@@ -3,10 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/RandomDice/app/src/main/res/layout/activity_dice_results_display.xml" value="0.33" />
-        <entry key="..\:/RandomDice/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/RandomDice/app/src/main/res/layout/dice_results_layout.xml" value="0.33" />
-        <entry key="..\:/RandomDice/app/src/main/res/layout/dice_roll_results_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/RandomDice/app/src/main/res/layout/activity_gal_cam.xml" value="0.36666666666666664" />
+        <entry key="..\:/RandomDice/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>
     </option>
   </component>
