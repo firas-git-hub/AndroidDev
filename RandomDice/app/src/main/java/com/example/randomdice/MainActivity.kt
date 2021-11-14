@@ -22,8 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     private var images = arrayOf<ImageView>()
     private lateinit var resultsButton: Button
-    private lateinit var changePPImageView: ImageView
     private lateinit var goToMapActButton: Button
+    private lateinit var fragmentsActivityButton: Button
+    private lateinit var changePPImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +36,8 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.diceImage4)
         )
         buttonBinding()
-        if(GalCamActivity.selectedImg.imgDrawable != null){
-            changePPImageView.setImageDrawable(GalCamActivity.selectedImg.imgDrawable)
+        if(GalCamActivity.imgDrawable != null){
+            changePPImageView.setImageDrawable(GalCamActivity.imgDrawable)
         }
     }
 
@@ -53,9 +54,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        changePPImageView = findViewById<ImageView>(R.id.ProfilePicture)
+        changePPImageView = findViewById(R.id.ProfilePicture)
         changePPImageView.setOnClickListener {
             val intent = Intent(this, GalCamActivity::class.java)
+            startActivity(intent)
+        }
+
+        fragmentsActivityButton = findViewById(R.id.mainActFragButt)
+        fragmentsActivityButton.setOnClickListener {
+            val intent = Intent(this, FragmentsActivity::class.java)
             startActivity(intent)
         }
     }

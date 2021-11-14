@@ -178,4 +178,15 @@
         app:layout_constraintStart_toEndOf="@+id/ProfilePicture"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/mainActFragButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0050C8"
+        android:text="Fragments"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/goToMapActBut" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

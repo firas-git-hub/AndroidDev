@@ -5,4 +5,11 @@
     <string name="ChangePPBut">Change PP</string>
     <string name="locTextView">-</string>
     <string name="coordsTextView">Click me for coords</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragmentOne">Hello from fragment one</string>
+    <string name="fragmentTwo">Hello from fragment two</string>
+    <string name="channelId">notification_channel</string>
+    <string name="channelName">notification_asgmt</string>
+    <string name="fatCatNotificationTitle">notification_asgmt</string>
+    <string name="fatCatNotificationText">notification_asgmt</string>
 </resources>

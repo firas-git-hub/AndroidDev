@@ -15,9 +15,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RandomDice">
+        <service
+            android:name="Model.FirebaseMsgReceiverService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".FragmentsActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD-y7qSnVJwK308Yg3Cc82mCJLxS1Msavs" />
+
         <activity
             android:name=".GalCamActivity"
             android:exported="true" />
@@ -37,5 +53,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
